@@ -20,3 +20,4 @@ Run the following script to install opencv-contrib
 ```bash
   bash setup/opencv-contrib/install_opencv-contrib.sh
 ```
+[Reference](https://docs.opencv.org/4.x/d4/d17/namespacecv_1_1aruco.html)
