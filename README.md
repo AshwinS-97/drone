@@ -21,3 +21,15 @@ Run the following script to install opencv-contrib
   bash setup/opencv-contrib/install_opencv-contrib.sh
 ```
 [Reference](https://docs.opencv.org/4.x/d4/d17/namespacecv_1_1aruco.html)
+
+Note : In case the extra modules library is not linked with the project run the following command
+
+1. Find the folder containing the shared library libopencv_aruco.so.406 using the following command line.
+```bash
+  sudo find / -name "libopencv_aruco.so.406*"
+```
+Then I got the result: /usr/local/lib/libopencv_aruco.so.406. Then run the following.
+```bash
+  echo "/usr/local/lib/" >> /etc/ld.so.conf.d/opencv.conf 
+  sudo ldconfig -v
+```
