@@ -33,3 +33,16 @@ Then I got the result: /usr/local/lib/libopencv_aruco.so.406. Then run the follo
   echo "/usr/local/lib/" >> /etc/ld.so.conf.d/opencv.conf 
   sudo ldconfig -v
 ```
+
+## Basic ros package talker and listener
+talker reads the aruco marker id and pass it to the listener (10Hz)
+ ```bash
+  cd ros2_ws
+  colcon build
+  . install/setup.bash
+```
+Run talker and listener in a seperate window
+ ```bash
+  ros2 run cpp_pubsub talker
+  ros2 run cpp_pubsub listener
+```
