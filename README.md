@@ -82,13 +82,19 @@ For Linux/macOS that's ```/usr/local```. Install it System-wide.
 Terminal 1  : Run gazebo sitl px4
 ```bash
     cd PX4-Autopilot
-    make px4_sitl gazebo
+    HEADLESS=1 make px4_sitl gazebo
 ```
 Terminal 2 : Runing sample MAVSDK example and connect to Gazebo.
 ```udp://:14540``` is the standard PX4 UDP port for connecting to offboard APIs.
 ```bash
-    cd MAVSDK/examples/takeoff_and_land/
-    cmake -Bbuild -H.
-    cmake --build build -j4
+    cd myscripts/tests
+    cmake .
+    cmake --build .
+    ./script udp://:14540
 ```
 MAVSDK should be able to connect to the Gazebo simulator.
+
+
+
+
+
