@@ -46,3 +46,15 @@ Run talker and listener in a seperate window
   ros2 run cpp_pubsub talker
   ros2 run cpp_pubsub listener
 ```
+
+## PX4 SITL
+following script installs Gazebo9, jMAVSim, NuttX/Pixhawk toolchain.
+```bash
+  git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+  bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
+```
+Create a file in PX4-Autopilot/boards/px4/sitl named rtps.px4board and put the line "CONFIG_MODULES_MICRORTPS_BRIDGE=y" into the file. Then you can make px4_sitl_rtps
+
+## RTPS 
+https://github.com/Jaeyoung-Lim/px4-offboard
+https://dev.px4.io/v1.9.0_noredirect/en/middleware/micrortps.html
