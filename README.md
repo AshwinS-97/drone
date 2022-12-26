@@ -58,3 +58,36 @@ Create a file in PX4-Autopilot/boards/px4/sitl named rtps.px4board and put the l
 ## RTPS 
 https://github.com/Jaeyoung-Lim/px4-offboard
 https://dev.px4.io/v1.9.0_noredirect/en/middleware/micrortps.html
+
+
+## MAVSDK Library Installation (From Source)
+#### Clone the Library
+```bash
+    git clone https://github.com/mavlink/MAVSDK.git
+    git submodule update --init --recursive
+```
+#### Configure First and then Build
+```bash
+    cmake -DCMAKE_BUILD_TYPE=Debug -Bbuild/default -H.
+    cmake --build build/default -j8
+```
+By default, when ```CMAKE_INSTALL_PREFIX``` is not set, cmake tries to install system-wide.
+For Linux/macOS that's ```/usr/local```. Install it System-wide.
+#### Install the Library built in the previous step
+```bash
+    sudo cmake --build build/default --target install
+```
+#### Testing the installation with Gazebo.
+Terminal 1  : Run gazebo sitl px4
+```bash
+    cd PX4-Autopilot
+    make px4_sitl gazebo
+```
+Terminal 2 : Runing sample MAVSDK example and connect to Gazebo.
+```udp://:14540``` is the standard PX4 UDP port for connecting to offboard APIs.
+```bash
+    cd MAVSDK/examples/takeoff_and_land/
+    cmake -Bbuild -H.
+    cmake --build build -j4
+```
+MAVSDK should be able to connect to the Gazebo simulator.
