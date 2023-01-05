@@ -3,5 +3,9 @@
 
 # ignore ALL files in ANY directory named temp
 # add files in this folder individually by forcing (-f)
-setup/opencv/
+setup/
 opencv/
+myscripts/
+build_opencv_contrib/
+opencv_contrib/
+ros2_ws/
