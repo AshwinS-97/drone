@@ -87,12 +87,12 @@ Terminal 1  : Run gazebo sitl px4
 Terminal 2 : Runing sample MAVSDK example and connect to Gazebo.
 ```udp://:14540``` is the standard PX4 UDP port for connecting to offboard APIs.
 ```bash
-    cd myscripts/tests
+    cd myscripts/tests/mavsdk_connect
     cmake .
     cmake --build .
     ./script udp://:14540
 ```
-MAVSDK should be able to connect to the Gazebo simulator.
+MAVSDK should be able to connect to the Gazebo simulator. To get video feed from ```gazebo_typhoon_h480``` build and run script in similar manner from ```myscripts/tests/Videofeed```
 
 
 
