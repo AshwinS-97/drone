@@ -55,12 +55,6 @@ following script installs Gazebo9, jMAVSim, NuttX/Pixhawk toolchain.
 ```
 
 
-## RTPS 
-Create a file in PX4-Autopilot/boards/px4/sitl named ```rtps.px4board``` and put the line ```CONFIG_MODULES_MICRORTPS_BRIDGE=y``` into the file. Then you can make px4_sitl_rtps 
-https://github.com/Jaeyoung-Lim/px4-offboard 
-https://dev.px4.io/v1.9.0_noredirect/en/middleware/micrortps.html
-
-
 ## MAVSDK Library Installation (From Source)
 #### Clone the Library
 ```bash
